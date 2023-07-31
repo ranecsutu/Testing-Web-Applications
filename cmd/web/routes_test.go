@@ -18,7 +18,6 @@ func Test_application_routes(t *testing.T) {
 		{"/static/*", "GET"},
 	}
 
-	var app application
 	mux := app.routes()
 
 	// assert that underlying type of "mux" (http.Handler), the underlying type being *chi.Mux returned in app.routes(), is of type chi.Routes; aka *chi.Mux implements chi.Routes interface
