@@ -1,11 +1,13 @@
 package main
 
 import (
+	"encoding/gob"
 	"flag"
 	"log"
 	"net/http"
 
 	"github.com/alexedwards/scs/v2"
+	"github.com/ranecsutu/testing/pkg/data"
 	"github.com/ranecsutu/testing/pkg/db"
 )
 
@@ -16,6 +18,7 @@ type application struct {
 }
 
 func main() {
+	gob.Register(data.User{})
 	// set up an app config
 	app := application{}
 
